@@ -1,5 +1,5 @@
 project(
-  'project',
+  'project', # change project name
   'cpp',
   version : '0.1',
   meson_version : '>= 1.3.0',
@@ -10,7 +10,8 @@ project(
   ]
 )
 
-exe = executable( 'project',
+exe = executable(
+  'project', # change output filename
   'src/main.cpp',
   dependencies: [
     dependency('spdlog'),
