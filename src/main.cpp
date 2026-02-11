@@ -1,5 +1,4 @@
 #include <string>
-#include <print>
 #include "spdlog/spdlog.h"
 
 int main() {
