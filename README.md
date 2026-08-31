@@ -1,6 +1,6 @@
 # project
 
-C++ personal starter project using Nix + Meson.
+C++ personal starter project using nix + meson.
 
 ## what you need
 
@@ -16,11 +16,11 @@ cd project
 # if you have direnv:
 direnv allow
 
-# if you don't have direnv:
+# else, you could just:
 nix develop
 ```
 
-First time setup; configure the build directory:
+Configuring the build directory:
 
 ```bash
 meson setup build
@@ -37,22 +37,20 @@ meson compile -C build
 # run
 ./build/project
 ```
-
-## what's inside the dev shell
-
-`clang++` `clangd` `clang-tidy` `clang-format` `gdb` `valgrind` `cppcheck` `ccache` `meson` `ninja`
+Refer to the [Meson Quick Start](https://mesonbuild.com/Quick-guide.html) for detailed guide.
 
 ## adding dependencies
 
-Two places. Always both.
 
 1. Add the library to `buildInputs` in `flake.nix`:
+Refer to the [Nix.dev Flakes Concept Manual](https://wiki.nixos.org/wiki/Flakes) for how dependencies map to reproducible outputs.
 
 ```nix
 buildInputs = [ pkgs.spdlog pkgs.new-lib ];
 ```
 
 2. Add it to your `meson.build`:
+Refer to the [Meson Dependency Documentation ](https://mesonbuild.com/Dependencies.html) for detailed syntax and options.
 
 ```meson
 dependencies: [
